@@ -12,7 +12,7 @@ Este proyecto es un cliente para la [API de Rick y Morty](https://rickandmortyap
 Para iniciar la aplicación, ejecuta el siguiente comando:
 
 ```
-npm start
+npm run dev
 ```
 
 Esto iniciará la aplicación en `http://localhost:5173`.
