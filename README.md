@@ -1,4 +1,3 @@
-
 # Rick y Morty API Client
 
 Este proyecto es un cliente para la [API de Rick y Morty](https://rickandmortyapi.com/) que permite buscar personajes, episodios y lugares de la serie. El objetivo del proyecto es aprender a consumir APIs y utilizar React para construir interfaces de usuario.
@@ -15,7 +14,6 @@ Para iniciar la aplicación, ejecuta el siguiente comando:
 ```
 npm start
 ```
-
 
 Esto iniciará la aplicación en `http://localhost:5173`.
 
