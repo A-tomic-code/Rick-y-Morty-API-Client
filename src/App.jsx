@@ -1,6 +1,7 @@
 import { Fondo } from './components/layout/Fondo/Fondo'
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import SearchPage from './components/SearchPage/SearchPage'
 
 function App() {
 
@@ -11,7 +12,7 @@ function App() {
         <Fondo></Fondo>
         
         <Routes>
-          <Route path='/' element={<h1>HOLII</h1>}/>
+          <Route path='/' element={<SearchPage/>}/>
           <Route path='/test' element={<h1>test</h1>}/>
         </Routes>
 

@@ -1,4 +1,27 @@
 #root {
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
+
+  --padding: 10px 20px;
+  --border-radius: 10px;
+  --accent-color: rgb(15, 216, 62);
+
+  
+}
+
+main {
+  width: 100%;
+  height: 100%;
+
+}
+
+button {
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  color: var(--accent-color)
+}
+
+input {
+  padding: var(--padding);
+  border-radius: var(--border-radius);
 }
