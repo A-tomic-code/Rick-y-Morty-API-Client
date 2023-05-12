@@ -35,7 +35,7 @@
   justify-content: flex-end;
   align-items: flex-start;
   padding: var(--padding);
-  background:#0fd6;
+  background:linear-gradient(transparent, #0fd9);
   width: 100%;
   height: 30%;
 }

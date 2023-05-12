@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { fetchData } from '../../slices/fetchDataSlice';
 
 import './SearchPage.css';
@@ -8,6 +8,7 @@ import './SearchPage.css';
 const SearchPage = () => {
   const [searchQuery, setSearchQuery] = useState(null);
   const dispatch = useDispatch();
+  const navigate = useNavigate()
 
   return (
     <div className="search-page">
@@ -15,6 +16,8 @@ const SearchPage = () => {
         className="search-form"
         onSubmit={(e) => {
           e.preventDefault();
+          fetchData(dispatch, searchQuery);
+          navigate('/results')
         }}
       >
         <input
@@ -22,17 +25,13 @@ const SearchPage = () => {
           id="searchQuery"
           onChange={(event) => setSearchQuery(event.target.value)}
         />
-        <Link to="/results">
+
           <button
             type="button"
             className="btn-search"
-            onClick={() => {
-              fetchData(dispatch, searchQuery);
-            }}
           >
             Buscar
           </button>
-        </Link>
       </form>
     </div>
   );
