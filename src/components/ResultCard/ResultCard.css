@@ -1,0 +1,85 @@
+.result-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 400px;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+
+  backdrop-filter: blur(10px);
+
+  border: 2px solid rgba(17, 180, 93, 1);
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 50px rgb(0, 0, 0);
+
+  animation: appear 0.5s ease-in-out;
+}
+.result-card:hover > ul {
+  transform: translateY(0%);
+  background: #10101090;
+
+}
+.result-card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-radius: var(--border-radius);
+  z-index: -1;
+}
+.result-card .basic-data{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: var(--padding);
+  background:#0fd6;
+  width: 100%;
+  height: 30%;
+}
+.result-card ul {
+  position: absolute;
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
+  padding: 5% 10%;
+  gap: 4%;
+
+  transition: all .5s;
+  transform: translateY(100%);
+
+}
+
+.result-card ul li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  justify-content: stretch;
+  width: 100%;
+  
+  word-break: break-all;
+  text-align: left;
+  height: auto;
+  animation: appear 1s ease-in-out;
+}
+.result-card ul li button {
+  align-self: flex-end;
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+

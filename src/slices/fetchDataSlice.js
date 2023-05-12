@@ -9,7 +9,7 @@ const endPoints =  {
 const fethDataSlice = createSlice({
   name: 'fethData',
   initialState: {
-    data: undefined,
+    data: {},
     isFetching: false
   },
   reducers: {
@@ -22,15 +22,14 @@ const fethDataSlice = createSlice({
   }
 })
 
-export const { setData, setIsFetching } = fethDataSlice.actions;
 
 export const fetchData = async (dispatch, searchQuery) => {
   dispatch(setIsFetching(true));
-
+  
   console.log(searchQuery);
-
+  
   try{
-    const response = await fetch(`${endPoints.characters}/1`)
+    const response = await fetch(`${endPoints.characters}/?name=${searchQuery}`);
     const data = await response.json()
     dispatch(setData(data));
   } catch (error){
@@ -40,4 +39,5 @@ export const fetchData = async (dispatch, searchQuery) => {
   dispatch(setIsFetching(false))
 }
 
+export const { setData, setIsFetching } = fethDataSlice.actions;
 export default fethDataSlice.reducer;

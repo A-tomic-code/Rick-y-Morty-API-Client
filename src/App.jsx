@@ -4,6 +4,7 @@ import SearchPage from './components/SearchPage/SearchPage'
 import { Provider } from 'react-redux'
 import store from './store'
 import './App.css'
+import ResultsPage from './components/ResultsPage/ResultsPage'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
 
           <Routes>
             <Route path='/' element={<SearchPage/>}/>
+            <Route path='/results' element={<ResultsPage/>}/>
             <Route path='/test' element={<h1>test</h1>}/>
           </Routes>
 
