@@ -30,17 +30,13 @@ const ResultsPage = () => {
       </div>
 
       <div className="results-container">
-        {Object.keys(data).length ? (
-          Object.keys(data).includes('results') ? (
-            data.results.map((item) => (
-              <ResultCard key={item.id} data={item}></ResultCard>
-            ))
-          ) : (
-            <ResultCard data={data}></ResultCard>
-          )
-        ) : (
-          <h1>NODATA</h1>
-        )}
+        
+        
+        {
+          Object.keys(data).length && !Object.keys(data).includes('error')
+          ? data.results.map(item => <ResultCard key={item.id} data={item} />)
+          : <h1>No hay resultados</h1>
+        }
       </div>
     </div>
   );
