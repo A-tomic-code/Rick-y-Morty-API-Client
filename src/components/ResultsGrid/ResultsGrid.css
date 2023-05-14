@@ -1,0 +1,16 @@
+.results{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7%;
+  justify-content: center;
+  align-items: flex-start;
+
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 5% 10%;
+}
+.results h1{
+  width: 100%;
+  text-align: center;
+}
