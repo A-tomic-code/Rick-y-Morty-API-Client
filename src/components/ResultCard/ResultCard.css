@@ -8,13 +8,11 @@
   aspect-ratio: 1/1;
   overflow: hidden;
 
-  backdrop-filter: blur(10px);
-
   border: 2px solid rgba(17, 180, 93, 1);
   border-radius: var(--border-radius);
   box-shadow: 0 0 50px rgb(0, 0, 0);
 
-  animation: appear 0.5s ease-in-out;
+  /* animation: appear 0.5s ease-in-out; */
 }
 .result-card:hover > ul {
   transform: translateY(0%);

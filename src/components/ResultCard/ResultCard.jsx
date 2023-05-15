@@ -8,7 +8,7 @@ export const ResultCard = ({ data}) => {
   
 
   
-  return (<div className="card-wrapper" >
+  return (
     <div className="result-card" >
       <img src={data.image} alt="imagen encontrada como resultado" />
       
@@ -39,7 +39,6 @@ export const ResultCard = ({ data}) => {
 
       </ul>
     </div>
-  </div>
   );
 };
 

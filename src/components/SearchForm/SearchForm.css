@@ -2,13 +2,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100%;
+  min-height: 70%;
 }
 
 .form svg {
   width: 70%;
-  height: fit-content;
-  padding: 0;
+  aspect-ratio: 3/1;
 
 }
 .search-form {
