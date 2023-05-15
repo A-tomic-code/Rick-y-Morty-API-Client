@@ -1,9 +1,39 @@
 import PropTypes from 'prop-types';
 import './ResultCard.css';
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useLayoutEffect, useRef } from 'react';
 
-export const ResultCard = ({ data }) => {
-  return (
-    <div className="result-card">
+
+gsap.registerPlugin(ScrollTrigger)
+export const ResultCard = ({ data, parentRef }) => {
+  const container = useRef()
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context((self) => {
+      const cards = self.selector('.result-card');
+
+      cards.forEach((card) => {
+        gsap.to(card, {
+          y: "-50%",
+          rotate: '180deg',
+          opacity:0,
+          scale:0,
+          scrollTrigger: {
+            trigger: card,
+            start: 'bottom bottom',
+            end: 'top 20%',
+            scrub: 2,
+          },
+        });
+      });
+    }, container); // <- Scope!
+    return () => ctx.revert(); // <- Cleanup!
+  }, []);
+
+  
+  return (<div className="card-wrapper" ref={container}>
+    <div className="result-card" >
       <img src={data.image} alt="imagen encontrada como resultado" />
       
       <div className="basic-data">
@@ -33,6 +63,7 @@ export const ResultCard = ({ data }) => {
 
       </ul>
     </div>
+  </div>
   );
 };
 
