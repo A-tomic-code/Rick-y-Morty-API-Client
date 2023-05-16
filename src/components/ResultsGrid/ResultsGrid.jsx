@@ -12,7 +12,6 @@ export const ResultsGrid = ({ data }) => {
   useLayoutEffect(() => {
     const ctx = gsap.context((self) => {
       const cards = self.selector('.result-card');
-      console.log(cards);
       cards.forEach((card, index) => {
         gsap.fromTo(
           card,
