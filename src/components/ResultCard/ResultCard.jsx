@@ -5,7 +5,7 @@ import './ResultCard.css';
 
 export const ResultCard = ({ data}) => {
 
-  
+  console.log(data);
 
   
   return (
@@ -15,10 +15,13 @@ export const ResultCard = ({ data}) => {
       <div className="basic-data">
         <h2 className="title">{data.name}</h2>
         <p className="text">{data.species}</p>
+        <p className="text">{data.status}</p>
+        <p className="text" title={data.location.name}>{data.location.name}</p>
+        <p className="text">{data.gender}</p>
       </div>
       
 
-      <ul>
+      {/* <ul>
         {Object.keys(data).map((key, index) => {
           const filter =
             key == 'status' ||
@@ -37,7 +40,7 @@ export const ResultCard = ({ data}) => {
           return returnValue;
         })}
 
-      </ul>
+      </ul> */}
     </div>
   );
 };

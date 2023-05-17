@@ -1,53 +1,56 @@
 .form {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: end;
   align-items: center;
+  gap:2%;
   min-height: 70%;
+  width: 100%;
 }
 
-.form svg {
-  width: 70%;
-  aspect-ratio: 3/1;
-
-}
-.search-form {
+.form .search-form{
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 30%;
 
-  gap: 5%;
-}
+  gap: 30%
+} 
 .search-form input {
-  width: 50%;
+  width: 70%;
+  max-width: 640px;
   height: 70px;
-  text-align: center;
-  color: #2fa;
+  color: var(--secondary-color);
   font-size: 24px;
 
-  box-shadow: 0 5px 15px #000,
-   0 0 30px #de50, 
-   -15px 15px #0009;
+  box-shadow: -15px 15px #0009;
 }
 
-.search-form input::placeholder {
-  color: transparent;
-  text-shadow: 0 0 2px rgba(102, 0, 255, 0.625);
-  -webkit-text-stroke: 1px #0f0;
-  font-weight: 500;
-  font-style: italic;
-}
 .search-form button {
   width: 20%;
+  min-width: fit-content;
   height: 50px;
 
   text-align: center;
-  color: #2fa;
-  font-size: 24px;
+  font-size: 1.5rem;
 
   box-shadow: 0 5px 15px #000,
    0 0 30px #de50, 
    -15px 15px #0009;
+}
+@media screen and (max-width: 1200px) {
+   .form{justify-content: center;}
+}
+@media screen and (max-width: 720px) {
+  
+  .form svg {
+    width: 80%;
+    height: 200px;
+  }
+  .form .search-form input, .form .search-form button{
+    height: 40px;
+    letter-spacing: 3px !important;
+  }
 }

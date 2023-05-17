@@ -7,9 +7,9 @@ export const Logo = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={1000}
+      width={700}
       height={300}
-      viewBox="0 25 264 30"
+      viewBox="0 0 270 80"
       {...props}
     >
       <path
@@ -211,6 +211,7 @@ const SearchForm = () => {
 
   return (
     <section className="form">
+      <Logo />
       <form
         className="search-form"
         onSubmit={(e) => {
@@ -218,7 +219,6 @@ const SearchForm = () => {
           fetchData(dispatch, searchQuery);
         }}
       >
-        <Logo />
         <input
           type="text"
           placeholder="¿Qué estás buscando?"

@@ -18,7 +18,6 @@ export const ResultsGrid = ({ data }) => {
           {
             scale: 0,
             opacity: '0',
-            y: '-100%',
           },
 
           {

@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@800;900&display=swap');
 
 :root {
-  font-family: 'Orbitron', sans-serif;
   line-height: 1.5;
-
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -16,58 +14,89 @@
   -webkit-text-size-adjust: 100%;
 
   --padding: 10px 20px;
-  --border-radius: 20px;
+  --border-radius: 15px;
 
-  --primary-color: green;
-  --secondary-color: aqua;
+  --primary-color: #bfde42;
+  --secondary-color: #42b4ca;
   --accent-color: gold;
 }
 
-*{
+* {
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 10px !important;
+
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.title{
+.title {
   font-size: 2rem;
   font-weight: 900;
   line-height: 1.2;
-  letter-spacing: 5px;
-  -webkit-text-stroke: 2.5px rgba(0, 0, 0, 0.543);
+  /* letter-spacing: 5px; */
   margin-bottom: 0.5rem;
 }
-.subtitle{
+.subtitle {
   font-size: 1.5rem;
   font-weight: 900;
   line-height: 1.2;
-  -webkit-text-stroke: 1px #000;
   margin-bottom: 0.5rem;
 }
-.text{
-  font-size: 1rem;
+.text {
+  font-size: 0.8rem;
   font-weight: 800;
-  -webkit-text-stroke: .5px #000;
-  letter-spacing: 3px;
 }
 
 input {
+  font-family: 'Orbitron', sans-serif;
+
   height: 50px;
 
   border-radius: var(--border-radius);
-  border:none;
+  border: none;
   padding: 5px 10px;
-  
 
   font-size: 1rem;
-  font-weight: 800;
   line-height: 1.2;
-  letter-spacing: 3px;
-}
+  text-align: center;
 
+  border: 2px outset #999;
+  outline: none;
+}
+input:active,
+input:focus,
+input:not(:empty) {
+  border: 2px solid var(--primary-color);
+}input::placeholder {
+  color: var(--secondary-color);
+  font-weight: 500;
+  font-style: italic;
+}
 
 button {
   padding: var(--padding);
   border-radius: var(--border-radius);
-  color: var(--accent-color)
+  color: var(--secondary-color);
+  text-align: center;
+}
+
+@media screen and (max-width: 1300px) {
+  input {
+    letter-spacing: 1px !important;
+  }
+  button {
+    font-size: .8rem !important;
+  }
+  
+}
+@media screen and (max-width: 900px) {
+  input {
+    font-size: 0.9rem !important;
+  }
+}
+@media screen and (max-width: 720px) {
+    input {
+      font-size: 0.7rem !important;
+    }
 }

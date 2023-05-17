@@ -24,9 +24,9 @@ export const Fondo = () => {
         tl.set(box, {
           x: x,
           y: y,
-          background: `rgba(0, ${Math.random() * 24 + 80}, ${Math.random()* 12 + 80},.5)`,
+          background: `rgba(0, ${Math.random() * 24 + 100}, ${Math.random()* 12 + 80},.5)`,
           scale: getRandomFloat(0, 0.6),
-          opacity: getRandomFloat(0, 0.3),
+          opacity: getRandomFloat(0, 0.5),
         });
 
         backgroundRef.current.appendChild(box);
