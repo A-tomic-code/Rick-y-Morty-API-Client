@@ -1,25 +1,20 @@
 import PropTypes from 'prop-types';
 import './ResultCard.css';
 
-
-
-export const ResultCard = ({ data}) => {
-
-  console.log(data);
-
-  
+export const ResultCard = ({ data }) => {
   return (
-    <div className="result-card" >
+    <div className="result-card">
       <img src={data.image} alt="imagen encontrada como resultado" />
-      
+
       <div className="basic-data">
         <h2 className="title">{data.name}</h2>
         <p className="text">{data.species}</p>
         <p className="text">{data.status}</p>
-        <p className="text" title={data.location.name}>{data.location.name}</p>
+        <p className="text" title={data.location.name}>
+          {data.location.name}
+        </p>
         <p className="text">{data.gender}</p>
       </div>
-      
 
       {/* <ul>
         {Object.keys(data).map((key, index) => {

@@ -4,8 +4,7 @@ import { ResultsGrid } from '../ResultsGrid/ResultsGrid';
 import { useSelector } from 'react-redux';
 
 const SearchPage = () => {
-
-  const data = useSelector(state => state.fetchData.data)
+  const data = useSelector((state) => state.fetchData.data);
 
   return (
     <div className="search-page">

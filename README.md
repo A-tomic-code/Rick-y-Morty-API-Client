@@ -4,7 +4,7 @@ Este proyecto es un cliente para la [API de Rick y Morty](https://rickandmortyap
 
 ## Instalación
 
-1. Clona el repositorio: `git clone https://github.com/tu-usuario/rick-and-morty-api-client.git`
+1. Clona el repositorio: `git clone https://github.com/a-tomic-code/rick-and-morty-api-client.git`
 2. Instala las dependencias: `npm install`
 
 ## Uso
@@ -19,7 +19,7 @@ Esto iniciará la aplicación en `http://localhost:5173`.
 
 ## Características
 
-- Buscar personajes, episodios y lugares de la serie.
+- Buscar personajes de la serie.
 - Ver detalles de los personajes, episodios y lugares.
 - Filtrar personajes por especie, género y estado.
 

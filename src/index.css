@@ -80,23 +80,27 @@ button {
   color: var(--secondary-color);
   text-align: center;
 }
+select {
+  /* appearance: none; */
 
-@media screen and (max-width: 1300px) {
-  input {
-    letter-spacing: 1px !important;
-  }
-  button {
-    font-size: .8rem !important;
-  }
-  
+  width:150px;
+  height: 50px;
+  padding: var(--padding);
+  border-radius: var(--border-radius) !important;
+  text-align: center;
 }
+
 @media screen and (max-width: 900px) {
   input {
     font-size: 0.9rem !important;
+  }button {
+    font-size: 1rem !important;
   }
 }
 @media screen and (max-width: 720px) {
     input {
+      font-size: 0.7rem !important;
+    }button {
       font-size: 0.7rem !important;
     }
 }

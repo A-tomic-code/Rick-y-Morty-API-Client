@@ -2,12 +2,18 @@ import PropTypes from 'prop-types';
 import './ResultsGrid.css';
 import { ResultCard } from '../ResultCard/ResultCard';
 import { gsap } from 'gsap';
-import { useLayoutEffect, useRef } from 'react';
-
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useSearchFilters } from '../../hooks/useSearchFilters';
 // gsap.registerPlugin(ScrollTrigger);
 
 export const ResultsGrid = ({ data }) => {
   const container = useRef();
+  const { filterData } = useSearchFilters();
+  const [filteredData, setFilteredData] = useState([]);
+
+   const fd = filterData()
+   console.log(fd);
+
 
   useLayoutEffect(() => {
     const ctx = gsap.context((self) => {
@@ -40,11 +46,13 @@ export const ResultsGrid = ({ data }) => {
     return () => ctx.revert(); // <- Cleanup!
   }, [data]);
 
+  if (data.error) return <h1>{data.error}</h1>;
+
   return (
     <section ref={container} className="results">
-      {Object.keys(data).length && !Object.keys(data).includes('error')
-        ? data.results.map((item) => <ResultCard key={item.id} data={item} />)
-        : data.error && <h1>No hay resultados {data.error}</h1>}
+      {fd.map((result, index) => (
+        <ResultCard key={index} data={result} />
+      ))}
     </section>
   );
 };
