@@ -47,3 +47,8 @@
   overflow: hidden;
   letter-spacing: 0px !important;
 }
+@media screen and (max-width: 720px){
+  .result-card{
+    width: 300px;
+  }
+}

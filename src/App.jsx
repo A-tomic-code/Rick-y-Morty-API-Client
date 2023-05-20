@@ -1,23 +1,18 @@
-import { Fondo } from './components/layout/Fondo/Fondo'
-import { Provider } from 'react-redux'
-import store from './store'
-import './App.css'
-import SearchPage from './components/SearchPage/SearchPage';
+import { Fondo } from './components/layout/Fondo/Fondo';
+import { Provider } from 'react-redux';
+import store from './store';
+import './App.css';
+import SearchPage from './components/pages/SearchPage/SearchPage';
 
 function App() {
-
   return (
-     <Provider store={store}>
+    <Provider store={store}>
       <main>
- 
-          <Fondo></Fondo>
-          <SearchPage></SearchPage>
-  
+        <Fondo></Fondo>
+        <SearchPage></SearchPage>
       </main>
-     </Provider>
-  )
-
-  
+    </Provider>
+  );
 }
 
-export default App
+export default App;

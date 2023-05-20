@@ -1,6 +1,6 @@
-import SearchForm from '../SearchForm/SearchForm';
+import SearchForm from '../../SearchForm/SearchForm';
 import './SearchPage.css';
-import { ResultsGrid } from '../ResultsGrid/ResultsGrid';
+import { ResultsGrid } from '../../ResultsGrid/ResultsGrid';
 import { useSelector } from 'react-redux';
 
 const SearchPage = () => {

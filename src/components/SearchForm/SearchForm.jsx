@@ -1,44 +1,12 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchData } from '../../slices/fetchDataSlice';
+import { SearchFilters } from '../SearchFilters/SearchFilters';
+import {motion} from 'framer-motion'
 import './SearchForm.css';
-import { useSearchFilters } from '../../hooks/useSearchFilters';
 import Logo from '../../assets/logo.svg';
 
-export const Filters = () => {
-  const { searchFilters, handleFilterChange, categories } = useSearchFilters();
 
-  return (
-    <div className="filters">
-      {Object.entries(categories).map((category) => {
-        return (
-          <select
-            id={category[0]}
-            key={category[0]}
-            onChange={handleFilterChange}
-            value={searchFilters[category[0]]}
-          >
-            {/* placeholder */}
-
-            <option value="" defaultValue>
-              ---
-            </option>
-
-            {/* listar las categorias */}
-
-            {category[1].map((item) => {
-              return (
-                <option key={item} value={item}>
-                  {item}
-                </option>
-              );
-            })}
-          </select>
-        );
-      })}
-    </div>
-  );
-};
 
 const SearchForm = () => {
   const [searchQuery, setSearchQuery] = useState(null);
@@ -58,10 +26,15 @@ const SearchForm = () => {
       <form className="search-form" onSubmit={handleSubmit}>
         <div className="search-input">
           <input placeholder="Rick, Morty, Beth.." onChange={handleChange} />
-          <button className="btn-search">Buscar</button>
+          <motion.button 
+            className="btn-search"
+            whileTap={{scale: .8}}
+          >
+            Buscar
+          </motion.button>
         </div>
 
-        <Filters />
+        <SearchFilters />
       </form>
     </section>
   );

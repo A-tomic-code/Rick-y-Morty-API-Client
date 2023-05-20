@@ -1,9 +1,29 @@
 import PropTypes from 'prop-types';
 import './ResultCard.css';
+import {motion} from 'framer-motion'
+
+const variants = {
+  hidden: {
+    opacity: 0,
+    
+  },
+  visible: {
+    opacity: 1,
+  },
+}
 
 export const ResultCard = ({ data }) => {
   return (
-    <div className="result-card">
+    <motion.div 
+      layout
+      className="result-card"
+      variants={variants}
+      initial={'hidden'}
+      animate={'visible'}
+      exit={'hidden'}
+      transition={{ duration: .2}}
+    >
+
       <img src={data.image} alt="imagen encontrada como resultado" />
 
       <div className="basic-data">
@@ -16,27 +36,7 @@ export const ResultCard = ({ data }) => {
         <p className="text">{data.gender}</p>
       </div>
 
-      {/* <ul>
-        {Object.keys(data).map((key, index) => {
-          const filter =
-            key == 'status' ||
-            key == 'type' ||
-            key == 'gender' ||
-            key == 'origin' ||
-            key == 'location';
-
-          const returnValue = filter ? (
-            <li key={index}>
-              <h3 className="subtitle">{`${key[0].toUpperCase()}${key.substring(1)}`}</h3>
-              <p className="text">{data[key].toString()}</p>
-            </li>
-          ) : null;
-
-          return returnValue;
-        })}
-
-      </ul> */}
-    </div>
+    </motion.div>
   );
 };
 

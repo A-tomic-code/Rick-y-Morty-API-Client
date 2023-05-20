@@ -1,24 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@800;900&display=swap');
 
 :root {
-  line-height: 1.5;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-
   --padding: 10px 20px;
   --border-radius: 15px;
 
   --primary-color: #bfde42;
   --secondary-color: #42b4ca;
   --accent-color: gold;
+  --background-color: #242424;
+  
+  color: var(--primary-color);
+  background-color: var(--background-color);
+
+  line-height: 1.5;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  
 }
 
 * {
@@ -28,6 +31,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  /* transition: .5s; */
 }
 
 .title {
@@ -48,40 +53,45 @@
   font-weight: 800;
 }
 
-input {
+  
+  input, select, button{
+  appearance: none;
+  
   font-family: 'Orbitron', sans-serif;
-
+  font-size: 1rem;
+  line-height: 1.2;
+  text-align: center;
   height: 50px;
 
   border-radius: var(--border-radius);
   border: none;
   padding: 5px 10px;
 
-  font-size: 1rem;
-  line-height: 1.2;
-  text-align: center;
-
+  background-color: var(--background-color);
+  color: var(--primary-color);
   border: 2px outset #999;
   outline: none;
 }
 input:active,
 input:focus,
 input:not(:empty) {
-  border: 2px solid var(--primary-color);
+  border-color: var(--primary-color);
+  
 }input::placeholder {
   color: var(--secondary-color);
-  font-weight: 500;
+  opacity: .5;
   font-style: italic;
 }
 
 button {
   padding: var(--padding);
   border-radius: var(--border-radius);
-  color: var(--secondary-color);
+  color: var(--primary-color);
   text-align: center;
+}button:hover {
+  border-color: var(--primary-color);
 }
 select {
-  /* appearance: none; */
 
   width:150px;
   height: 50px;
@@ -91,16 +101,14 @@ select {
 }
 
 @media screen and (max-width: 900px) {
-  input {
+  input, button, select{
     font-size: 0.9rem !important;
-  }button {
-    font-size: 1rem !important;
   }
 }
 @media screen and (max-width: 720px) {
-    input {
+    input, button, select {
+      height: 40px !important;
       font-size: 0.7rem !important;
-    }button {
-      font-size: 0.7rem !important;
+      padding: 4px 8px;;
     }
 }

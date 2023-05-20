@@ -9,8 +9,15 @@
   min-height: 100vh;
 
   padding: 4% 2%;
+  padding-top: 0;
 }
 .results h1{
   width: 100%;
   text-align: center;
+}
+
+@media screen and (max-width: 720px){
+  .results{
+    gap:24px
+  }
 }

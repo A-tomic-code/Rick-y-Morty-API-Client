@@ -1,0 +1,46 @@
+.filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  
+  width: 70%;
+  height: 20%;
+  
+}
+
+.filters select {
+  box-shadow: -10px 10px 0 #0007;
+  width: 30%;
+  text-align: center;
+}
+
+@media screen and (min-width: 1024px) {
+
+  .filters select {
+    width: 25%;
+  }
+}@media screen and (max-width: 720px) {
+
+  .filters select {
+  width: 43%;
+
+    height: 50px;
+    letter-spacing: 3px !important;
+  }
+}
+@media screen and (max-width: 450px) {
+  .filters {
+    padding-bottom: 0;
+    width: 100;
+  }
+  .filters select {
+    height: 35px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 0.5rem !important;
+    font-weight: 400;
+    letter-spacing: 1px !important;
+  }
+}
