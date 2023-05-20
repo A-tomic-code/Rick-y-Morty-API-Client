@@ -13,21 +13,22 @@ export const SearchFilters = () => {
   return (
     <div className="filters">
       {Object.entries(categories).map((category) => {
+        const [categoryName, valuesSet] = category
         return (
           <select
-            id={category[0]}
-            key={category[0]}
+            id={categoryName}
+            key={categoryName}
             onChange={handleChange}
           >
             {/* placeholder */}
 
             <option value="" defaultValue>
-              ---
+              {categoryName}
             </option>
 
             {/* listar las categorias */}
 
-            {category[1].map((item) => {
+            {valuesSet.map((item) => {
               return (
                 <option key={item} value={item}>
                   {item}
