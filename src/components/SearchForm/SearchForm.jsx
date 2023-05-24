@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchData } from '../../slices/fetchDataSlice';
 import { SearchFilters } from '../SearchFilters/SearchFilters';
-import {motion} from 'framer-motion'
 import './SearchForm.css';
 import Logo from '../../assets/logo.svg';
+import { SearchButton } from '../SearchButton/SearchButton';
 
 
 
@@ -24,17 +24,9 @@ const SearchForm = () => {
       <img src={Logo} alt="logo" className="logo" />
 
       <form className="search-form" onSubmit={handleSubmit}>
-        <div className="search-input">
-          <input placeholder="Rick, Morty, Beth.." onChange={handleChange} />
-          <motion.button 
-            className="btn-search"
-            whileTap={{scale: .8}}
-          >
-            Buscar
-          </motion.button>
-        </div>
-
+        <input  placeholder="Rick, Morty, Beth.." onChange={handleChange} />
         <SearchFilters />
+        <SearchButton/>
       </form>
     </section>
   );

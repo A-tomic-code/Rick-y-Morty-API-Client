@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap:5%;
   align-items: center;
   height: 80vh;
   padding: var(--padding);
@@ -20,9 +21,8 @@
   justify-content: center;
   align-items: center;
   width: 80%;
-  height: 40%;
-
-  gap: 5%;
+  min-height: 40%;
+  gap: 24px;
 }
 .search-form .search-input {
   display: flex;
@@ -32,11 +32,10 @@
   gap: 24px;
 }
 
-.search-form input,
-.search-input button {
+.search-form input {
   width: 70%;
   height: 70px;
-  max-width: 720px;
+  max-width: 1024px;
 color: var(--primary-color);
   font-size: 1.3rem;
   box-shadow: -10px 10px #0006;
@@ -44,8 +43,10 @@ color: var(--primary-color);
 .search-form input{
   width: 80%;
 }
-.search-input button {
-  width: fit-content;
+.search-form button {
+  width: 40%;
+  box-shadow: -10px 10px #0006;
+
 }
 .search-input input::placeholder {
   

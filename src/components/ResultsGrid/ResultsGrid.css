@@ -1,7 +1,7 @@
 .results{
   display: flex;
   flex-wrap: wrap;
-  gap: 7%;
+  gap: 32px;
   justify-content: center;
   align-items: flex-start;
 

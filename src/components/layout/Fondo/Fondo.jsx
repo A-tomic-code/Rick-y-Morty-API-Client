@@ -17,7 +17,6 @@ export const Fondo = () => {
             filter: [`blur(0px)`,`blur(5px)`,`blur(1px)`],
             scale: [0, Math.random() - .2, 0],
             rotate: [0, 90, 0],
-            
           }}
           style={{
             top: y,
@@ -29,6 +28,7 @@ export const Fondo = () => {
             // ease: 'easeInOut',
             repeat: Infinity,
           }}
+            
           className="box"
           key={x+'-'+y}
         />
