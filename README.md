@@ -4,7 +4,7 @@ Este proyecto es un cliente para la [API de Rick y Morty](https://rickandmortyap
 
 ## Instalación
 
-1. Clona el repositorio: `git clone https://github.com/a-tomic-code/rick-and-morty-api-client.git`
+1. Clona el repositorio: `git clone https://github.com/A-tomic-code/Rick-y-Morty-API-Client.git`
 2. Instala las dependencias: `npm install`
 
 ## Uso
