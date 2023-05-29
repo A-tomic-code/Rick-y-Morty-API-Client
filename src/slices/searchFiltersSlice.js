@@ -6,6 +6,7 @@ const fetchDataSlice = createSlice({
     gender: false,
     species: false,
     status: false,
+    filtered: []
   },
   reducers: {
     setSearchFilters: (state, action) => {
@@ -20,6 +21,9 @@ const fetchDataSlice = createSlice({
     setSearchFiltersGender: (state, action) => {
       state.gender = action.payload;
     },
+    setFiltered: (state, action) => {
+      state.filtered = action.payload
+    }
   },
 });
 
@@ -28,5 +32,6 @@ export const {
   setSearchFiltersGender,
   setSearchFiltersSpecies,
   setSearchFiltersStatus,
+  setFiltered,
 } = fetchDataSlice.actions;
 export default fetchDataSlice.reducer;

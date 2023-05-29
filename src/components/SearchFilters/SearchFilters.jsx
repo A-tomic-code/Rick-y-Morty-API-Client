@@ -10,6 +10,8 @@ export const SearchFilters = () => {
       ? (e.target.style.borderColor = 'var(--primary-color)')
       : (e.target.style.borderColor = '');
   };
+
+  
   return (
     <div className="filters">
       {Object.entries(categories).map((category) => {
@@ -23,7 +25,7 @@ export const SearchFilters = () => {
             {/* placeholder */}
 
             <option value="" defaultValue>
-              {categoryName}
+              {'No filter'}
             </option>
 
             {/* listar las categorias */}

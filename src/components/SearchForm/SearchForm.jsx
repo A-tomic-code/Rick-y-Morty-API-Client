@@ -1,23 +1,23 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { fetchData } from '../../slices/fetchDataSlice';
 import { SearchFilters } from '../SearchFilters/SearchFilters';
 import './SearchForm.css';
 import Logo from '../../assets/logo.svg';
 import { SearchButton } from '../SearchButton/SearchButton';
+import { useApi } from '../../hooks/useApi';
 
 
 
 const SearchForm = () => {
   const [searchQuery, setSearchQuery] = useState(null);
-  const dispatch = useDispatch();
-
-  const handleSubmit = (event) => {
+  const { searchCharacters } = useApi()
+const handleChange = (event) => setSearchQuery(event.target.value);
+ 
+   const handleSubmit = (event) => {
     event.preventDefault();
-    fetchData(dispatch, searchQuery);
+    searchCharacters(searchQuery)
+    
   };
 
-  const handleChange = (event) => setSearchQuery(event.target.value);
 
   return (
     <section className="form">
